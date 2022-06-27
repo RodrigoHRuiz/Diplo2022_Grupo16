@@ -1,4 +1,4 @@
-## Introducción al Aprendizaje Automático
+## Entregable Introducción al Aprendizaje Automático
 ## Grupo 16
 - Fernanda Borghello,<br>
 - Rodrigo Ruiz,<br>
