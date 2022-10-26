@@ -40,7 +40,7 @@ Para la búsqueda de los mejores hiperparámetro se agregó una capa oculta adic
 
 ## Experimentos
 Todos los experimentos fueron registrados con MLflow para poder comprar los modelos y optener las gráficas de pérdida para entrenamiento y evaluación.
-Dada la elección de posibles hiperparámetros, había que evaluar 64 modelos. Para evitar el riesgo de perder el proceso en algún punto intermedio, se dividió en 4 etapas, es decir de a 16 modelos por vez. Además, todos los modelos fueron entrandos tomando la muestra del 10% de los datos, como se explicó en [lectura de los datos](https://github.com/RodrigoHRuiz/Diplo2022_Grupo16/edit/main/DeepLearning/01%20Modelo%20MLP/Readme.md#lectura-de-los-datos).
+Dada la elección de posibles hiperparámetros, había que evaluar 64 modelos. Para evitar el riesgo de perder el proceso en algún punto intermedio, se dividió en 4 etapas, es decir de a 16 modelos por vez. Además, todos los modelos fueron entrandos tomando la muestra del 10% de los datos, como se explicó en [lectura de los datos](#lectura-de-los-datos).
 A continuación se puede ver la tabla de registros de MLflow con los primeros resultados, ordenados por la métrica.
 ![registros mlflows](https://github.com/RodrigoHRuiz/Diplo2022_Grupo16/blob/main/DeepLearning/images/mlflow.png?raw=true)
 Como resultado de las 64 pruebas, se obtuvieron modelos con métricas en el rango de 36.0% a 67.7%.
