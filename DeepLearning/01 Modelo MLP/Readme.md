@@ -62,8 +62,8 @@ El conjunto test fue sometido al mismo preprocesamiento utilizado en las etapada
 Finalmente, la métrica lograda a partir de las predicciones sobre el conjunto de prueba fue de 79.1%.
 
 ## Archivos respaldo
-<a href="https://github.com/RodrigoHRuiz/Diplo2022_Grupo16/blob/main/DeepLearning/01%20Modelo%20MLP/TP%20-%20Deep%20Learning%20-%20MLP.ipynb">Notebook de todo el proceso</a>
+<a href="https://github.com/RodrigoHRuiz/Diplo2022_Grupo16/blob/main/DeepLearning/01%20Modelo%20MLP/TP%20-%20Deep%20Learning%20-%20MLP.ipynb" target="_blank">Notebook de todo el proceso</a>
 <br>
-<a href="https://drive.google.com/file/d/1vEZYwQ7jsEyreZxcG-eyvMbKKxAlMF1Y/view?usp=sharing">Experimentos MLflow</a>
+<a href="https://drive.google.com/file/d/1vEZYwQ7jsEyreZxcG-eyvMbKKxAlMF1Y/view?usp=sharing" target="_blank">Experimentos MLflow</a>
 <br>
-<a href="https://drive.google.com/file/d/16KqVWlnR8qIdedh30F0KK5i2K9OZjc6A/view?usp=sharing">Parámetros entrenados del mejor modelo</a>
+<a href="https://drive.google.com/file/d/16KqVWlnR8qIdedh30F0KK5i2K9OZjc6A/view?usp=sharing" target="_blank">Parámetros entrenados del mejor modelo</a>
