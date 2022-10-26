@@ -5,7 +5,7 @@ Los datos para el problema se dividen en tres conjuntos: train, validation y tes
 A los fines prácticos de poder realizar el ajuste de hiperparámetros en un lapso de tiempo acorde a la disponibilidad de los recursos de cálculo disponibles, se programó la opción de tomar una muestra aleatoria del 10% de los conjuntos train y validation; siempre procurando mantener la distribución de clases del conjunto original.
 Se grafican las 10 categorías con mayor frecuencia y las 10 con menor frecuencia, para cada uno de los conjuntos de datos. Como puede observarse, las muestras seleccionadas mantienen la distribución de los conjuntos originales; y se asegura que dentro de cada conjunto estén las 632 categorías. Es importante también resaltar que los 3 conjuntos están muy desbalanceados.
 ![graficos clases](https://github.com/RodrigoHRuiz/Diplo2022_Grupo16/blob/main/DeepLearning/images/graficos_clases.png?raw=true)
-Luego, el entrenamiento del modelo seleccionado como definitivo, será entrenado con todos los datos del conjunto train y se analizará el desempeño sobre todo el conjunto test.
+Luego, el entrenamiento del modelo seleccionado como definitivo será realizado con todos los datos del conjunto train y se analizará el desempeño sobre todo el conjunto test.
 
 ### Creación de las clases dataset
 Se crearon dos clases dataset, una para levantar todos los datos del lote y otra que lo hace en forma iterable, según las posibilidades de cómputo.
@@ -27,7 +27,7 @@ Por último, se codifican las categorías con un índice, por orden de aparició
 
 ### PadSequences y Dataloaders
 Se creó una clase PadSequences para iguales el tamaño de los datos con los que será alimentada la red.
-Además, se utilizan los dataloaders de Pytorch para pasar los datos por lotes a la red.
+Además, se utilizaron los dataloaders de Pytorch para pasar los datos por lotes a la red.
 
 ### Modelo baseline
 Se diseñó un modelo simple con una capa de emeding, luego una capa oculta con función de activación relu y la capa de salida. La función de pérdida utilizada para todo el trabajo fue CrossEntropyLoss, apropiada para problemas de clasificación muticlase. Además, se optó por utiilizar Adam como algoritmo de optimización.
@@ -62,8 +62,8 @@ El conjunto test fue sometido al mismo preprocesamiento utilizado en las etapada
 Finalmente, la métrica lograda a partir de las predicciones sobre el conjunto de prueba fue de 79.1%.
 
 ## Archivos respaldo
+<a href="https://github.com/RodrigoHRuiz/Diplo2022_Grupo16/blob/main/DeepLearning/01%20Modelo%20MLP/TP%20-%20Deep%20Learning%20-%20MLP.ipynb">Notebook de todo el proceso</a>
+<br>
 <a href="https://drive.google.com/file/d/1vEZYwQ7jsEyreZxcG-eyvMbKKxAlMF1Y/view?usp=sharing">Experimentos MLflow</a>
 <br>
 <a href="https://drive.google.com/file/d/16KqVWlnR8qIdedh30F0KK5i2K9OZjc6A/view?usp=sharing">Parámetros entrenados del mejor modelo</a>
-<br>
-<a href="">Notebook de todo el proceso</a>
