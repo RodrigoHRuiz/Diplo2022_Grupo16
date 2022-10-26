@@ -40,19 +40,26 @@ Para la búsqueda de los mejores hiperparámetro se agregó una capa oculta adic
 
 ## Experimentos
 Todos los experimentos fueron registrados con MLflow para poder comprar los modelos y optener las gráficas de pérdida para entrenamiento y evaluación.
-Dada la elección de posibles hiperparámetros, había que evaluar 64 modelos. Para evitar el riesgo de perder el proceso en algún punto intermedio, se dividió en 4 etapas, es decir de a 16 modelos por vez.
+Dada la elección de posibles hiperparámetros, había que evaluar 64 modelos. Para evitar el riesgo de perder el proceso en algún punto intermedio, se dividió en 4 etapas, es decir de a 16 modelos por vez. Además, todos los modelos fueron entrandos tomando la muestra del 10% de los datos, como se explicó en [lectura de los datos](https://github.com/RodrigoHRuiz/Diplo2022_Grupo16/edit/main/DeepLearning/01%20Modelo%20MLP/Readme.md#lectura-de-los-datos).
 A continuación se puede ver la tabla de registros de MLflow con los primeros resultados, ordenados por la métrica.
 ![registros mlflows](https://github.com/RodrigoHRuiz/Diplo2022_Grupo16/blob/main/DeepLearning/images/mlflow.png?raw=true)
+Como resultado de las 64 pruebas, se obtuvieron modelos con métricas en el rango de 36.0% a 67.7%.
 
 ### Mejor modelo
 El modelo seleccionado como definitivo es el que puede verse seleccionado en la imagen anterior. Su elección se debió a que, comparado con los modelos más arriba, la diferencia en la métrica no era significativa y esos otros modelos ya comenzaban a mostrar signos de sobreajuste antes de la 5ta época, como puede verse en la imagen que sigue:
 ![principio sobreajuste](https://github.com/RodrigoHRuiz/Diplo2022_Grupo16/blob/main/DeepLearning/images/loss_principio_sobreajuste.png?raw=true)
+
 En cambio, las curvas de pérdida para el modelo seleccionado muestran una mejor situación:
 ![curvas mejor modelo](https://github.com/RodrigoHRuiz/Diplo2022_Grupo16/blob/main/DeepLearning/images/loss_mejor_,modelo.png?raw=true)
 
+La métrica optenida en el entrenamiento y evaluación con la muestra de datos fue 65.4%. Los parámetros del modelo seleccionado son:
+![param mejor modelo](https://github.com/RodrigoHRuiz/Diplo2022_Grupo16/blob/main/DeepLearning/images/param_mejor_modelo.png?raw=true)
+
+Luego, se realizó el entrenamiento y evaluación de este modelo pero con el total de los datos de train y validation. Así, la precisión balanceada ascensió a 73.1%. Este experimento también fue monitoreado con MLflow para que sea incluido en los registros. Se guardaron los parámetros entrenados del modelo para utilizarlos en el siguiente paso y evaluar el desempeño sobre el conjunto de prueba.
+
 ## Resultados y performance sobre el conjunto Test
-
-
+El conjunto test fue sometido al mismo preprocesamiento utilizado en las etapadas anteriores, teniendo en consideración que el diccionario es el formado a partir de los conjuntos de entrenamiento y evaluación porque el conjunto de prueba son datos "nuevos" que se presentan al modelo.
+Finalmente, la métrica lograda a partir de las predicciones sobre el conjunto de prueba fue de 79.1%.
 
 ## Archivos respaldo
 <a href="https://drive.google.com/file/d/1vEZYwQ7jsEyreZxcG-eyvMbKKxAlMF1Y/view?usp=sharing">Experimentos MLflow</a>
