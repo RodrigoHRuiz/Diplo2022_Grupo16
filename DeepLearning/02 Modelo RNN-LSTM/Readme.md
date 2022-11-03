@@ -35,11 +35,12 @@ Por una cuestión de capacidad de procesamiento todos los modelos fueron entrena
 El modelo baseline alcanzó un resultado de 56.4%, y fue la línea base para comprar con otras arquitecturas de red e hiperparámetros.
 
 ### Modelo RNN-LSTM para ajustar hiperparámetros
-Para la búsqueda de los mejores hiperparámetro se agregó una capa oculta adicional y dropout a la red. Además, se definió una función para el entrenamiento y evaluación de los modelos que recibe como parámetros el tamaño de la capa oculta, la proporción para el dropout, la función de activación, el algoritmo de optimización, tasa de aprendizaje, parámetro de regularización, épocas y la opción de guardar los parámetros del modelo entrenado.
+Para la búsqueda de los mejores hiperparámetro se agregó una capa lineal oculta adicional y dropout a la red. Además, se definió una función para el entrenamiento y evaluación de los modelos que recibe como parámetros el tamaño de la capa oculta, la proporción para el dropout, la función de activación, el algoritmo de optimización, tasa de aprendizaje, parámetro de regularización, épocas y la opción de guardar los parámetros del modelo entrenado.
 
 ## Experimentos
 Todos los experimentos fueron registrados con MLflow para poder comprar los modelos y obtener las gráficas de pérdida para entrenamiento y evaluación.
-Dada la elección de posibles hiperparámetros, había que evaluar 36 modelos. Para evitar el riesgo de perder el proceso en algún punto intermedio, se dividió en 3 etapas (con distintas funciones de activación), es decir de a 12 modelos por vez. Además, todos los modelos fueron entrenados tomando la muestra del 10% de los datos, como se explicó en [lectura de los datos](#lectura-de-los-datos).
+Dada la elección de posibles hiperparámetros, había que evaluar 36 modelos. Para evitar el riesgo de perder el proceso en algún punto intermedio, se dividió en 3 etapas, es decir de a 12 modelos por vez. Además, todos los modelos fueron entrenados tomando la muestra del 10% de los datos, como se explicó en [lectura de los datos](#lectura-de-los-datos).
+La funcion de activación utilizada en cada etapa fue diferente (relu, mish, tanh). Mientras los parametros hidden_dim, bdirectional, p_dropouts, opts, lrs, wds se iteraron dentro de determinados valores iguales para cada etapa.
 A continuación se puede ver la tabla de registros de MLflow con los primeros resultados, ordenados por la métrica.
 ![registros mlflows rnn](https://github.com/RodrigoHRuiz/Diplo2022_Grupo16/blob/main/DeepLearning/images/mlflow_rnn.png?raw=true)
 Como resultado de las 36 pruebas, se obtuvieron modelos con métricas en el rango de 63.0% a 79.8%. En general, se puede apreciar que el rango de métricas de las pruebas es superior a los resultados de las pruebas de parámetros del modelo de red MLP realizada en el trabajo anterior (36.0% a 67.7%), mostrando una considerable mejora con redes recurrentes. Además, es claro que en las primeras 18 posiciones se ubican las redes con LSTM bidireccional, resultando en un parámetro clave para mejorar el desempeño del modelo.
@@ -59,7 +60,7 @@ Luego, se realizó el entrenamiento y evaluación de este modelo pero con el tot
 
 ## Resultados y performance sobre el conjunto Test
 El conjunto test fue sometido al mismo preprocesamiento utilizado en las etapas anteriores, teniendo en consideración que el diccionario es el formado a partir de los conjuntos de entrenamiento y evaluación porque el conjunto de prueba son datos "nuevos" que se presentan al modelo.
-Finalmente, la métrica lograda a partir de las predicciones sobre el conjunto de prueba fue de 89.3%.
+Finalmente, la métrica lograda a partir de las predicciones sobre el conjunto de prueba (89.3%) fue mejor que la obtenida con el modelo MLP (79.1%) y sumado a esto, el método RNN es bueno para el procesamiento de secuencias, por lo que se concluye que estas redes neuronales son ideales para este tipo de problemas.
 
 ## Archivos respaldo
 <a href="https://github.com/RodrigoHRuiz/Diplo2022_Grupo16/blob/main/DeepLearning/02%20Modelo%20RNN-LSTM/TP%20-%20Deep%20Learning%20-%20RNN-LSTM.ipynb" target="_blank">Notebook de todo el proceso del modelo RNN-LSTM</a>
