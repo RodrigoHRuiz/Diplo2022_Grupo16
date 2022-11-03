@@ -9,3 +9,4 @@
 ## Modelo MLP
 https://github.com/RodrigoHRuiz/Diplo2022_Grupo16/tree/main/DeepLearning/01%20Modelo%20MLP
 ## Modelo RNN
+https://github.com/RodrigoHRuiz/Diplo2022_Grupo16/tree/main/DeepLearning/02%20Modelo%20RNN-LSTM
